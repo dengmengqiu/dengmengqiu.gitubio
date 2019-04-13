@@ -1,0 +1,253 @@
+<!DOCTYPE HTML>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" charset="utf-8" src="js/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/js" href="js/index.js">
+    <style type="text/css" src="css/index.css"></style>
+</head>
+<body>
+    <div class="content">
+        <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td width="60%" height="30"><img height="20" src="images/book.png" width="30">&nbsp;<a href="index_h_c_2.html"><u>文章列表</u></a> &gt;&gt; 发布文章</td>
+                    <td width="30%" align="right">&nbsp;<a href="index_h_c_1.html">[<u>栏目管理</u>]</a> </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <form name="form1" action="" enctype="multipart/form-data" method="post" onsubmit="return _()">
+            <input type="hidden" name="channelid" value="">
+            <input type="hidden" name="dopost" value="">
+            <table width="98%" border="0" align="center" cellpadding="2" cellspacing="2" style="border: 1px solid rgb(207, 207, 207);">
+                <tbody>
+                    <tr>
+                        <td height="24" colspan="5">
+                            <table width="800" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td width="90">&nbsp;文章标题：</td>
+                                        <td width="408"><input name="title" type="text" id="title" value="" style="width:388px"></td>
+                                        <td width="90">&nbsp;简略标题：</td>
+                                        <td><input name="shorttitle" type="text" style="width:150px"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="400%" height="24" colspan="2">
+                            <table width="800" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td width="90">&nbsp;TAG标签：</td>
+                                        <td><input name="tags" type="text" id="tags" value="" style="width:300px" onchange="$Obj('keywords').value=this.value;">(','号分开，单个标签小于12字节)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="24" colspan="5" class="bline">
+                            <table width="800" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td width="90">&nbsp;文章来源：</td>
+                                        <td width="240">
+                                            <input name="source" type="text" id="source" style="width:160px" value="" size="16">
+                                            <input name="selsource" type="button" id="selsource" value="选择"></td>
+                                        <td width="90">作　者：</td>
+                                        <td>
+                                            <input name="writer" type="text" id="writer" style="width:120px" value="">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="24" colspan="5">
+                            <table width="800" border="0" cellspacing="0" cellpadding="0">
+                                <tbody> 
+                                    <tr>
+                                        <td width="150">&nbsp;文章主栏目：</td>
+                                        <td>
+                                            <span>
+                                                <select name="typeid" style="width:240px">
+                                                    <option value="0">请选择栏目...</option>
+                                                    <option value="">部门</option>
+                                                    <option value="">─技术部<option>
+                                                    <option value="">─ ─部门介绍</option>
+                                                </select>
+                                            </span>
+                                            <img src="images/seo.png" width="30px" height="30px" style="cursor:pointer;" onclick="openWindow('quick_columns_selector');" alt="快捷选择" title="快捷选择">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="24" colspan="5">
+                            <table width="800" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td width="90">&nbsp;内容摘要：</td>
+                                        <td width="449">
+                                            <textarea name="description" rows="5" id="description" style="width:80%;height:50px"></textarea>
+                                        </td>
+                                            <td width="261">&nbsp;</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr><td colspan="2"><input type="hidden" name="dede_addonfields" value=""></td>
+                </tbody>
+            </table>
+            <table>
+                <tbody>
+                    <tr>
+                        <td width="100%" height="24" colspan="2">
+                            <table width="800" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td width="90">&nbsp;分页方式：</td>
+                                        <td>
+                                            <input type="radio" name="sptype" value="auto" check="checked">自动
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="98%">
+                            <!-- 插入编辑器 -->
+                                <div id="content" class="edui-default"> 
+                                        <form>
+                                            <textarea name="editor1" id="editor1" rows="10" cols="80"></textarea>
+                                            <script>
+                                                // Replace the <textarea id="editor1"> with a CKEditor
+                                                // instance, using default configuration.
+                                                CKEDITOR.replace( 'editor1' );
+                                            </script>
+                                        </form>
+                                    </div>     
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- //高级参数 -->
+            <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:10px;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <table border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                    <tr>
+                                        <td width="84" height="24" align="center">&nbsp;<a href=“#><u>高级参数↑</u></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table width="800" border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                    <tr>
+                        <td width="90">&nbsp;阅读权限：</td>
+                        <td width="240"> 
+                            <select name="arcrank" id="arcrank" style="width:150px">
+                                <option value="0">开放浏览</option>
+                                <option value="50">技术部部长</option>
+                                <option value="50">销售部部长</option>
+                                <option value="50">人力资源部部长/option>
+                                <option value="50">普通员工</option>
+                                <option value="100">CEO</optio>
+                            </select> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="24" colspan="4">
+                            <table width="800" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td width="90">&nbsp;发布时间：</td>
+                                        <td width="241">
+                                            <input name="pubdate" value="" type="text" id="GetDate" style="width:120px">	       
+                                            <script>
+                                                var today=new Date()
+                                                var y=today.getFullYear();
+                                                var mon=today.getMonth();
+                                                var d=today.getDate();
+                                                var h=today.getHours()
+                                                var m=today.getMinutes()
+                                                var s=today.getSeconds()
+                                                // add a zero in front of numbers<10
+                                                m=checkTime(m)
+                                                s=checkTime(s)
+                                                document.getElementById('GetDate').value=y+'/'+mon+'/'+d+' '+h+":"+m+":"+s;
+                                        
+                                                function checkTime(i)
+                                                {
+                                                if (i<10) 
+                                                {i="0" + i}
+                                                return i
+                                                }
+                                            </script>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table width="98%" border="0" cellspacing="0" cellpadding="0" align="center" style="border:1px solid #cfcfcf;border-top:none;">
+                <tbody>
+                    <tr height="35">
+                        <td width="17%">&nbsp;</td>
+                        <td width="83%">
+                            <input type="button" width="60" height="22" border="0" value="保存" style="cursor:pointer;">
+                            <button width="60" height="22" border="0" style="cursor:pointer; "><a href="index_h_c_2_add_acticle.html">重置</a></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+    <!-- 栏目快速选择器 -->
+    <div id="quick_columns_selector" style="position: absolute; width: 700px; height: 500px; top: 100px; left: 300px; display:none; background:rgba(53, 52, 52, 0.863)">
+        <div style="cursor:default;width:100%;border-bottom:1px solid #C9CFC1;height:30px;line-height:30px;text-align:left;">
+            <div style="margin-left:1em; float:left; width:50%;margin-top:2px;">栏目快速选择器</div>
+            <div style="cursor:pointer;width:46%; float:left; text-align:right;margin:2px;"><a href="#" onclick="closeWindow('quick_columns_selector');">关闭</a></div>
+        </div>
+        <form action="" method="get" sytle="width:100%;">
+            <div style="z-index:1000; width:680px; margin-bottom:5px;margin-left:5px;height:30px;line-height:30px;">
+                <div style="width:100%;">
+                    <div style="font-weight:bold; clear:both; line-height:24px; border-bottom:1px solid #ccc; padding-left:5px;">部门</div>
+                    <div style="width:100%;height:30px;line-height:30px;">  
+                        <div style="float:left;margin-left:8px;"><input type="radio" name="seltypeid" value=""><span onclick="openWindow('nextMenu')">技术部</span></div>
+                        <div style="float:left;margin-left:8px;"><input type="radio" name="seltypeid" value=""><span onclick="openWindow('nextMenu')">销售部</span></div>
+                    </div>
+                    <div id="nextMenu" style="width:96%;height:30px;line-height:30px;margin-right:2em;border-bottom:1px solid #C9CFC1;display:none;">  
+                        <div style="float:left;margin-left:12px;"><input type="radio" name="seltypeid" value="">部门介绍</div>
+                    </div>
+                </div>
+            </div>
+            <div align="center" style="padding-top:8px;margin-top:350px;">
+                <button onclick="" width="60" height="22" style="cursor:pointer">确定</button>
+                    &nbsp;&nbsp;
+                <button onclick="closeWindow('quick_columns_selector');" width="60" height="22" border="0" style="cursor:pointer">返回</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

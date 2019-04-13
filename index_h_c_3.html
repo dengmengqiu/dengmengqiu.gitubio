@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" charset="utf-8" src="js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/js" href="js/index.js">
+    <style type="text/css" src="css/index.css"></style>
+</head>
+<body>
+    <div class="content">
+        <div leftmargin="8">
+            <table width="98%" border="0" cellpadding="0" cellspacing="1"  align="center">
+                <tbody>
+                    <tr>
+                        <td height="26">
+                            <table width="98%" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td align="center">
+                                            <input type="button" onclick="" value="更新列表">
+                                            <input type="button" onclick="" value="更新html">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                     </tr>
+                </tbody>
+            </table>              
+            <!--  留言列表   -->
+            <form name="form2">
+                <table width="98%" border="0" cellpadding="2" cellspacing="1" align="center" style="margin-top:8px">
+                    <tbody>
+                        <tr>
+                            <td height="28" colspan="10" style="padding-left:10px;"><img width="20px" height="30px" src="images/book.png">  留言|评论管理&gt;&gt;留言列表</td>
+                        </tr>
+                        <tr align="center" height="25">
+                            <td width="6%">ID</td>
+                            <td width="8%">选择</td>
+                            <td width="32%">留言内容</td>
+                            <td width="10%">留言时间</td>
+                            <td width="10%">类目</td>
+                            <td width="8%">权限</td>
+                            <td width="10%">操作</td>
+                        </tr>
+                        <tr align="center" height="26">
+                            <td nowrap="">1</td>
+                            <td><input class="select" type="checkbox" value=""></td>
+                            <td align="left"><span><a href="#"><u>SAS</u></a></span>[<font color="red">跳转</font>]</td>
+                            <td>2017-11-09</td>
+                            <td><a href="#">留言</a></td>
+                            <td>开放浏览</td>
+                            <td>
+                                <img src="images/delete.png" title="删除" alt="删除" onclick="" style="cursor:pointer" border="0" width="16" height="16">
+                                <img src="images/unsee.png" title="下墙" alt="下墙" onclick="" style="cursor:pointer" border="0" width="16" height="16">
+                            </td>
+                        </tr>
+                        <tr align="center" height="26">
+                                <td nowrap="">1</td>
+                                <td><input class="select" type="checkbox" value=""></td>
+                                <td align="left"><span><a href="#"><u>SAS</u></a></span>[<font color="red">跳转</font>]	</td>
+                                <td>2017-11-09</td>
+                                <td><a href="#">评论</a></td>
+                                <td>开放浏览</td>
+                                <td>
+                                    <img src="images/delete.png" title="删除" alt="删除" onclick="" style="cursor:pointer" border="0" width="16" height="16">
+                                    <img src="images/unsee.png" title="下墙" alt="下墙" onclick="" style="cursor:pointer" border="0" width="16" height="16">
+                                </td>
+                            </tr>
+                        <tr>
+                        <td height="36" colspan="10">
+                            &nbsp;
+                            <a href="#" onclick="selectAll('select');">全选</a>
+                            <a href="#" onclick="deSelectAll('select')">取消</span>
+                            <a href="#">&nbsp;删除&nbsp;</a>
+                        </td>
+                        </tr>
+                        <tr align="right">
+                            <td height="36" colspan="10" align="center">
+                                <div class="pagelistbox"><span>共 1 页/1条记录 </span><span>首页</span><strong>1</strong>
+                                    <a href="#">2</a>
+                                    <a href="#">3</a>
+                                    <a class="#">下页</a> 
+                                    <a class="endPage" href="#">末页</a> 
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>                   
+            </form>
+        </div>
+    </div>
+</body>
+</html>
